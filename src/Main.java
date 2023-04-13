@@ -200,6 +200,10 @@ ar = random.nextInt(1001,3500);
         for(int i=0;i< random.nextInt(50);i++){
             cim.append(abc.charAt(random.nextInt(abc.length())));
         }
+        cim.append(' ');
+        for(int i=0;i< random.nextInt(50);i++){
+            cim.append(abc.charAt(random.nextInt(abc.length())));
+        }
         return cim.toString();
     }
 
