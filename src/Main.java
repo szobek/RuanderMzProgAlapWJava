@@ -46,8 +46,10 @@ arról is küldjön üzenetet.
         elsoDraga(filmek);
         System.out.println();
         System.out.println();
-        System.out.println();
+        System.out.println("szinkronos fimek:");
         szinkronSzerintiLista(filmek,true);
+        System.out.println();
+        System.out.println("Feliratos filmek");
         szinkronSzerintiLista(filmek,false);
         System.out.println();
         System.out.println();
@@ -185,10 +187,8 @@ ar = random.nextInt(1001,3500);
 
     static private void szinkronSzerintiLista(Film[] filmek, boolean szinkron){
         for (Film elem : filmek) {
-            if(szinkron&&!elem.isFeliratos()){
-                System.out.println(elem.getCim());
-            }else {
-                System.out.println(elem.getCim()+((elem.isFeliratos())? " feliratos ":" szinkronos ")+elem.getAr()+"ft");
+            if((szinkron&&!elem.isFeliratos()) || (!szinkron&&elem.isFeliratos())) {
+                System.out.println(elem.getCim() + ((elem.isFeliratos()) ? " feliratos " : " szinkronos ") + elem.getAr() + "ft");
             }
         }
 
